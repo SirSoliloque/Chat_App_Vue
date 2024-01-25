@@ -9,7 +9,6 @@ function addMessage(){
     }
 
     messageList.value.push(messageText.value);
-    document.getElementById('message').value = '';
     messageText.value = '';
 }
 
@@ -21,6 +20,6 @@ function addMessage(){
     </div>
     <div class="flex align-center">
         <textarea v-model="messageText" name="message" id="message" rows="1" class="text-black rounded-md"></textarea>
-        <button v-on:click="addMessage" class="^-2 bg-blue-600 rounded-md ml-3">Envoyer</button>
+        <button v-on:click="addMessage" class="p-2 bg-blue-600 rounded-md ml-3">Envoyer</button>
     </div>
 </template>
