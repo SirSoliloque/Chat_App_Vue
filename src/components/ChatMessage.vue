@@ -8,6 +8,8 @@ const props = defineProps({
     }
 });
 
+const emit = defineEmits(['delete']);
+
 function formatDate(date){
     let formattedDay = date.toLocaleDateString();
     let formattedTime = date.toLocaleTimeString('default', {hour: '2-digit', minute: '2-digit'});
@@ -32,6 +34,8 @@ const formattedDate = computed(() => {
             <!-- Aujourd'hui si c'est aujourd'hui -->
             <!-- Hier...-->
         </span>
+
+        <button @click="emit('delete', message.id)" class="bg-red-600 rounded-md p-2 ml-2">Supprimer</button>
     </div>
 
     <div>
