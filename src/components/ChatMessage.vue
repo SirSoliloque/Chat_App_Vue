@@ -1,5 +1,6 @@
 <script setup>
 import {computed} from 'vue';
+import { TrashIcon } from '@heroicons/vue/24/solid'
 
 const props = defineProps({
     message: {
@@ -46,7 +47,11 @@ const formattedDate = computed(() => {
             <!-- Hier...-->
         </span>
 
-        <button @click="emit('delete', message.id)" class="bg-red-600 rounded-md p-2 ml-2">Supprimer</button>
+        
+
+        <button @click="emit('delete', message.id)" class="bg-red-500 rounded-md p-2 ml-2 hover:bg-red-600">
+            <TrashIcon class="w-4 h-4" />
+        </button>
     </div>
 
     <div>
