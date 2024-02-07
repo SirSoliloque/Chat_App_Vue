@@ -23,12 +23,12 @@ const formattedDate = computed(() => {
 
 <template>
     <div class="flex">
-        <img class="bg-slate-600 h-10 w-10 rounded-full" :src="message.user.avatarUrl">
+        <img class="bg-slate-600 h-10 w-10 mr-1 rounded-full" :src="message.user.avatarUrl">
         {{ message.user.username }}
-        <span class="text-xs text-opacity-40 text-gray-50">
+        <span class="text-xs text-opacity-40 text-gray-50 ml-1">
             
             {{ formattedDate }}
-            <!--TODO format jj/mm/yyyy à hh:mm -->
+            <!--TODO-->
             <!-- Aujourd'hui si c'est aujourd'hui -->
             <!-- Hier...-->
         </span>
