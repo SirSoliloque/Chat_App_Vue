@@ -11,7 +11,18 @@ const props = defineProps({
 const emit = defineEmits(['delete']);
 
 function formatDate(date){
-    let formattedDay = date.toLocaleDateString();
+    let formattedDay = "Aujourd'hui";
+
+    let currentTime = new Date();
+    
+    if(
+        date.getDate() != currentTime.getDate() 
+        || currentTime.getMonth() != date.getMonth()
+        || currentTime.getFullYear() != date.getFullYear()
+    ) {
+        formattedDay = date.toLocaleDateString();
+    }
+    
     let formattedTime = date.toLocaleTimeString('default', {hour: '2-digit', minute: '2-digit'});
     return `${formattedDay} à ${formattedTime}`;
 };
